@@ -39,16 +39,21 @@
                               <div class="form-content px-2">
                               
                                 <h1 class="text">Verify</h1>
-                                <p class="fs-4 pb-5">Your code was sent to you via email</p>
+                                <p class="fs-5 pb-5">Your code was sent to you via email</p>
                                 
                                 <div class="form-group d-flex align-items-center position-relative">
-                                  <input type="number" class="form-control" id="floatingInput" placeholder="">
+                                  <input type="text" class="form-control" id="floatingInput" placeholder="">
                                   <div id="timer" class="position-absolute end-0 pe-2"></div> <!-- Timer -->
                               </div>
                                 
-                              <p class="pt-3 pb-2">Didn't receive code? <a href="#" class="href text-dark" onclick="resetTimer()">Request again</a></p>
+                              <p class="pt-3 pb-2">
+                                Didn't receive code? 
+                                <a href="#" class="href text-dark" onclick="resetTimer()">
+                                    <input class="reqbtn" type="button" value="Request again" id="requestBtn" disabled>
+                                </a>
+                              </p>
 
-                                <button id="btn" class="w-100 py-3" type="submit"><b>VERIFY</b></button>
+                                <button id="btn" class="w-100 py-3" type="submit" disabled><b>VERIFY</b></button>
 
                               </div>
                             </form>
@@ -67,5 +72,5 @@
 
 <!-- JQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-<script src="JQ.js" type="text/javascript"></script>
+<script src="verify.js" type="text/javascript"></script>
 </html>

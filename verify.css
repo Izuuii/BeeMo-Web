@@ -45,10 +45,12 @@ html, body {
     background-color: #2B2B2B;
     border-radius: 50px; /* Adjust this value to make the button more or less rounded */
     margin-top: 24px;
-    font-size: 12px;
-    height: auto;
+    font-size: 10px;
+    height: 50px;
     letter-spacing: 5px;
     color: white;
+    font-weight: 350;
+    margin-bottom: 5px;
 }
 
 #btn:hover{
@@ -63,7 +65,7 @@ html, body {
     background-color: #FAEF9B;
     display: inline-block;
     border-radius: 10px;
-    font-size: 36px;   
+    font-size: 32px;   
     margin-top: 18%;
     margin-bottom: 18%;
     padding: 2px;
@@ -71,7 +73,7 @@ html, body {
 
 @media (max-width: 768px) {
     .text{
-        font-size: 32px;
+        font-size: 24px;
     }
 }
 
@@ -90,6 +92,7 @@ html, body {
     justify-content: space-between;
 }
 
+/* Timer script */
 #timer{
     color: red;
 }
@@ -101,4 +104,10 @@ html, body {
 .form-content {
     max-height: calc(100vh - 120px); /* Adjust this value as needed */
     overflow-y: auto;
+}
+
+.reqbtn{
+    border: hidden;
+    background-color: white;
+    color: red;
 }

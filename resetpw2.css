@@ -49,8 +49,9 @@ html, body {
     border-radius: 50px; /* Adjust this value to make the button more or less rounded */
     margin-top: 44px;
     font-size: 10px;
-    height: auto;
+    height: 50px;
     letter-spacing: 5px;
+    font-weight: 350;
 }
 
 
@@ -70,7 +71,7 @@ html, body {
     background-color: #FAEF9B;
     display: inline-block;
     border-radius: 10px;
-    font-size: 36px;   
+    font-size: 32px;   
     margin-top: 16%;
     margin-bottom: 16%;
     padding: 2px;
@@ -78,7 +79,7 @@ html, body {
 
 @media (max-width: 768px) {
     .text{
-        font-size: 32px;
+        font-size: 24px;
     }
 }
 

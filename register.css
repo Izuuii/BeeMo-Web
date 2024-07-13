@@ -51,6 +51,7 @@ html, body {
     height: auto;
     letter-spacing: 1.5px;
     margin-bottom: 5px;
+    font-weight: 350;
 }
 
 #btn:hover{
@@ -64,7 +65,7 @@ html, body {
     background-color: #FAEF9B;
     display: inline-block;
     border-radius: 10px;
-    font-size: 36px;   
+    font-size: 32px;   
     margin-top: 12%;
     margin-bottom: 12%;
     padding: 2px;
@@ -72,21 +73,24 @@ html, body {
 
 @media (max-width: 768px) {
     .text{
-        font-size: 32px;
+        font-size: 24px;
     }
 }
 
-#floatingInput, #floatingPassword, #floatingConfirmPassword{
+#fullName, #email, #mobileNumber, #password, #confirmPassword{
     background-color: #F3F8FF;
     border: 2px solid black;
-    border-radius: 10px;
-    font-size: 12px;
-    height: auto;
+    border-radius: 12px;
+    width: 100%; /* Ensure the input fields expand to fill the container */
+    font-size: 14px;
+    height: 50px;
+    
 }
 
 .form-floating{
-    font-size: 12px;
+    font-size: 10px;
 }
+
 
 u{
     background-color: #6DA4AA;
@@ -122,14 +126,27 @@ u:hover{
 
 .toggle-password {
     position: absolute;
-    top: 40%;
+    top: 38%;
     right: 16px;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .form-content {
     max-height: calc(100vh - 120px); /* Adjust this value as needed */
     overflow-y: auto;
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+input.is-invalid {
+    background-image: none !important; /* Remove the alert icon */
+    border-color: #dc3545; /* Keep the border red for invalid state */
+}
+
+input.is-invalid ~ .invalid-feedback {
+    display: block;
 }

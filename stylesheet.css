@@ -49,8 +49,8 @@ html, body {
     background-color: #F3F8FF;
     border: 2px solid black;
     border-radius: 10px;
-    font-size: 12px;
-    height: auto;
+    font-size: 14px;
+    height: 50px;
 }
 
 .form-floating{
@@ -61,7 +61,7 @@ html, body {
     background-color: #FAEF9B;
     display: inline-block;
     border-radius: 10px;
-    font-size: 36px;
+    font-size: 32px;
     margin-top: 16%;
     margin-bottom: 16%;
     padding: 2px;
@@ -69,7 +69,7 @@ html, body {
 
 @media (max-width: 768px) {
     .text{
-        font-size: 32px;
+        font-size: 24px;
     }
 }
 
@@ -107,12 +107,19 @@ u:hover{
 
 .toggle-password {
     position: absolute;
-    top: 40%;
+    padding-bottom: 12px;
     right: 16px;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 
 #login{
     background-color: #2B2B2B;
@@ -123,6 +130,12 @@ u:hover{
     height: auto;
     letter-spacing: 1.5px;
     margin-bottom: 5px;
+    font-weight: 350;
+}
+
+.form-content {
+    max-height: calc(100vh - 120px); /* Adjust this value as needed */
+    overflow-y: auto;
 }
 
 #login:hover{
@@ -132,7 +145,17 @@ u:hover{
     transition: background-color 0.5s ease;
 }
 
-.form-content {
-    max-height: calc(100vh - 120px); /* Adjust this value as needed */
-    overflow-y: auto;
+.invalid-feedback {
+    display: none;
 }
+
+input.is-invalid {
+    background-image: none !important; /* Remove the alert icon */
+    border-color: #dc3545; /* Keep the border red for invalid state */
+}
+
+input.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+

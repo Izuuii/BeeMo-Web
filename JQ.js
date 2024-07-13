@@ -1,61 +1,61 @@
 document.addEventListener("DOMContentLoaded", function() {
     const togglePassword = document.querySelector('#togglePassword');
     const passwordField = document.querySelector('#floatingPassword');
-    const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
-    const confirmPasswordField = document.querySelector('#floatingConfirmPassword');
-    
-    togglePassword.addEventListener('click', function() {
-        // Toggle the type attribute for the password field
-        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordField.setAttribute('type', type);
-        
-        // Toggle the eye icon
-        this.querySelector('i').classList.toggle('fa-eye');
-        this.querySelector('i').classList.toggle('fa-eye-slash');
-    });
 
-    toggleConfirmPassword.addEventListener('click', function() {
-        // Toggle the type attribute for the confirm password field
-        const type = confirmPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
-        confirmPasswordField.setAttribute('type', type);
+    
+    const toggleVisibility = function(field, toggle) {
+        // Toggle the type attribute for the field
+        const type = field.getAttribute('type') === 'password' ? 'text' : 'password';
+        field.setAttribute('type', type);
         
         // Toggle the eye icon
-        this.querySelector('i').classList.toggle('fa-eye');
-        this.querySelector('i').classList.toggle('fa-eye-slash');
+        toggle.querySelector('i').classList.toggle('fa-eye');
+        toggle.querySelector('i').classList.toggle('fa-eye-slash');
+    };
+
+    togglePassword.addEventListener('click', function() {
+        toggleVisibility(passwordField, togglePassword);
     });
 });
 
-// Timer script
-let timer = document.getElementById('timer');
-let timeLeft = 180; // 3 minutes in seconds
-let timerInterval;
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-function updateTimer() {
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
+    var email = document.getElementById('floatingInput');
+    var password = document.getElementById('floatingPassword');
 
-    // Format the time as MM:SS
-    timer.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    var emailValid = email.checkValidity();
+    var passwordValid = password.checkValidity();
 
-    if (timeLeft > 0) {
-        timeLeft--;
+    if (emailValid && passwordValid) {
+        email.classList.remove('is-invalid');
+        password.classList.remove('is-invalid');
+        this.submit();
     } else {
-        clearInterval(timerInterval);
-        timer.innerHTML = "Time's up!";
+        if (!emailValid) {
+            email.classList.add('is-invalid');
+        } else {
+            email.classList.remove('is-invalid');
+        }
+
+        if (!passwordValid) {
+            password.classList.add('is-invalid');
+        } else {
+            password.classList.remove('is-invalid');
+        }
     }
-}
+});
 
-function startTimer() {
-    clearInterval(timerInterval);
-    timeLeft = 180; // Reset the timer to 3 minutes
-    timerInterval = setInterval(updateTimer, 1000);
-    updateTimer(); // Initial call to display the timer immediately
-}
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-function resetTimer() {
-    startTimer();
-}
+    // Validate all fields here
 
-// Start the timer when the page loads
-startTimer();
+    if (allFieldsValid) {
+        // Remove invalid feedback and submit the form
+        loginForm.submit();
+    } else {
+        // Show invalid feedback for each field
+    }
+});
 
